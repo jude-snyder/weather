@@ -41,7 +41,7 @@ describe("getCurrent", () => {
     });
 
     it("should throw an error if the API fails", async () => {
-        mockFetch(false);
-        await expect(getCurrent("49508")).rejects.toThrow("Unable to fetch current weather");
+        await mockFetch(false);
+        expect(getCurrent("49508")).rejects.toThrow("Unable to fetch current weather");
     });
 });
